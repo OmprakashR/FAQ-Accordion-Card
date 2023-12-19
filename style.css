@@ -1,0 +1,193 @@
+/* CSS accordian*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root {
+    --Very-dark-desaturate-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --Dividers: hsl(240, 5%, 91%);
+}
+
+body {
+    background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.box {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+}
+
+.image-1,
+.image-2 {
+    position: absolute;
+    width: 100%;
+
+}
+
+.section {
+    width: 50%;
+}
+
+.section-overflow {
+    overflow: hidden;
+    position: relative;
+}
+
+
+label {
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    font-size: 1.5em;
+
+    border-bottom: 1px solid var(--Dividers);
+    padding: 10px 10px 10px 0px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.faq-section {
+    padding: 100px;
+}
+
+input {
+    display: none;
+}
+
+[type="radio"]:checked+label {
+    color: var(--Very-dark-grayish-blue);
+    font-weight: 600;
+}
+
+[type="radio"]+label:hover {
+    color: var(--Soft-red);
+}
+
+[type="radio"]+label+.according-body {
+    height: 0px;
+    overflow: hidden;
+    transition: 0.6s all;
+    font-size: 1.5em;
+
+
+}
+
+[type="radio"]:checked+label+.according-body {
+    color: var(--Dark-grayish-blue);
+    height: auto;
+    transition: 0.6s all;
+    border-bottom: 1px solid var(--Dividers);
+    padding: 10px 0px;
+    overflow: auto;
+
+}
+
+[type="radio"]+label>.arrow img {
+    transform: rotate(0deg);
+    transition: 0.6s all;
+}
+
+[type="radio"]:checked+label>.arrow img {
+    transform: rotate(180deg);
+    transition: 0.6s all;
+}
+
+.width-container {
+    width: 65%;
+    background-color: #fff;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+.image-1 img,
+.image-2 img {
+
+    width: 100%;
+}
+
+.image-1 {
+    bottom: 80px;
+    left: -80px;
+}
+
+.image-2 {
+    width: 150%;
+    bottom: -50px;
+    left: -300px;
+}
+
+.sub-box {
+    position: absolute;
+    left: -195px;
+    z-index: 111;
+    bottom: 70px;
+}
+
+@media  (max-width: 768px) {
+    
+    .width-container{
+        width: 90%;
+    }
+
+    h1{
+        text-align: center;
+    }
+    .section{
+        width: 92%;
+    }   
+    .box{
+        flex-direction: column;
+    }
+    .faq-section{
+        padding: 10px;
+    }
+    .image-1,.image-2,.sub-box{
+        display: none;
+    }
+    .mobile-section{
+        display: flex !important; width: 100%;
+        justify-content: center; 
+        position: relative; 
+        top: -20px;
+        height: 250px;
+        flex-direction: column;
+    }
+    .mobile-section img + img{
+        position: relative;
+    top: -100px;
+    }
+    .mobile-section img{
+        width: 80%; margin: 0 auto;
+    
+    }
+}
+
+.mobile-section{
+    display: none
+}
